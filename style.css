@@ -124,6 +124,8 @@ html,body{
     margin-bottom:0.6rem;
 }
 
+#panel-left .role{ color:var(--blue); }
+#panel-right .role{ color:var(--slate); }
 .name{
     font-family: 'Heading';
 }
