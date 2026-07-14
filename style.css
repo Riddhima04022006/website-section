@@ -64,7 +64,8 @@ html,body{
 }
 
 .portrait-div{
-    transform: translateY(-60px);
+    top:0;
+    margin-top:-5rem;
     position: relative;
     height: 50%;
     width:100%;
@@ -96,7 +97,7 @@ html,body{
 }
 
 .info{
-    top:-15%;
+    margin-top: -2rem;
     position:relative;
     z-index:2;
     width:100%;
