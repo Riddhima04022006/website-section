@@ -10,12 +10,6 @@
     box-sizing: border-box;
 }
 
-:root{
-    --ink-faint: #cfcfcf;
-    --blue: #6ea8ff;
-    --slate: #a9b4c0;
-}
-
 html, body {
     min-height: 100vh;
     background-color: rgb(0, 0, 0);
@@ -127,12 +121,12 @@ html, body {
     font-size: 0.72rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--ink-faint);
+    color: #cfcfcf;
     margin-bottom: 0.6rem;
 }
 
-#panel-left .role{ color: var(--blue); }
-#panel-right .role{ color: var(--slate); }
+#panel-left .role{ color: #6ea8ff; }
+#panel-right .role{ color: #a9b4c0; }
 
 .name {
     font-family: 'Heading', sans-serif;
@@ -161,16 +155,11 @@ html, body {
 
     #flex-wrapper {
         flex-direction: column;
-        /* no scroll-snap here: it was fighting the sticky heading and
-           causing the scroll "jump" between panels */
     }
 
     .panel {
         flex: none;
         width: 100%;
-        /* content-driven height instead of a forced 100dvh + centering,
-           so the portrait/info block doesn't get stranded with dead
-           space above/below it (that dead space was reading as a "gap") */
         height: auto;
         min-height: 420px;
         padding: 8vh 0 6vh;
