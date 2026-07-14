@@ -49,7 +49,6 @@ html, body {
 #flex-wrapper {
     display: flex;
     position: relative;
-    scroll-snap-type: y proximity;
 }
 
 #section4-background::before {
@@ -162,22 +161,34 @@ html, body {
 
     #flex-wrapper {
         flex-direction: column;
+        /* no scroll-snap here: it was fighting the sticky heading and
+           causing the scroll "jump" between panels */
     }
 
     .panel {
         flex: none;
         width: 100%;
-        height: 100dvh;
-        min-height: 520px;
-        scroll-snap-align: start;
+        /* content-driven height instead of a forced 100dvh + centering,
+           so the portrait/info block doesn't get stranded with dead
+           space above/below it (that dead space was reading as a "gap") */
+        height: auto;
+        min-height: 420px;
+        padding: 8vh 0 6vh;
+        justify-content: flex-start;
     }
 
-    #panel-left .portrait{ transform: translateY(-120%); }
-    #panel-right .portrait{ transform: translateY(120%); }
-    .panel.in-view .portrait{ transform: translateY(0); }
+    .portrait-div {
+        height: auto;
+        margin-top: 0;
+    }
 
-    .portrait-div{ height: 70%; }
-    .portrait{ max-width: 62%; }
+    .portrait {
+        max-width: 62%;
+    }
+
+    .info {
+        margin-top: 1.5rem;
+    }
 
     .bio {
         line-height: 1.6;
