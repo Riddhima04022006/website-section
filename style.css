@@ -124,8 +124,6 @@ html,body{
     margin-bottom:0.6rem;
 }
 
-.panel-left .role{ color:var(--blue); }
-.panel-right .role{ color:var(--slate); }
 .name{
     font-family: 'Heading';
 }
@@ -159,11 +157,11 @@ html,body{
       scroll-snap-align:start;
     }
 
-    .panel-left .portrait{ transform:translateY(-120%); }
-    .panel-right .portrait{ transform:translateY(120%); }
+    #panel-left .portrait{ transform:translateY(-120%); }
+    #panel-right .portrait{ transform:translateY(120%); }
     .panel.in-view .portrait{ transform:translateY(0); }
 
-    .portrait-wrap{ height:70%; }
+    .portrait-div{ height:70%; }
     .portrait{ max-width:62%; }
     .bio{
         line-height: 1.6;
