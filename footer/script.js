@@ -1,0 +1,2 @@
+function openPopup(id) { closePopups(); document.getElementById(id).classList.add('active'); }
+function closePopups() { document.querySelectorAll('.popup').forEach(p => p.classList.remove('active')); }
