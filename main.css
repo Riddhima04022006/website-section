@@ -1,0 +1,973 @@
+html{
+    --font-display: "Sora", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --accent-dark: #5f4f88;
+}
+body{
+    margin : 0px;
+    padding : 0px;
+    overflow-x: hidden;
+    overflow-y: visible !important;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}
+button{
+    font-family: inherit;
+    cursor : pointer;
+}
+#navbar{
+    /*border : 1px solid black;*/
+    position : fixed;
+    width : 100%;
+    height : 2.5vw;
+    display : flex;
+    flex-direction : row;
+    justify-content : space-between !important;
+    padding-top : 10px;
+    padding-bottom : 10px;
+    margin-top: -2.7vw;
+    z-index: 1000;
+}
+#logo{
+    cursor : pointer;
+    height : 90%;
+    width : 10%;
+    margin-left : 4vw;
+    border : 1px solid black;
+    transition : transform 1s ease;
+}
+#logo:active{
+    transform : scale(0.92);
+}
+#menu_toggle{
+    display: none;
+}
+#starts{
+    position: relative;
+    overflow: hidden;
+    border-radius:15px;
+    padding-left:0.15%;
+    padding-right:0.5%;
+    height:90%;
+    width:15%;
+    margin-right:4vw;
+    display:flex;
+    justify-content:space-around;
+    background:rgba(225,220,240,.55);
+
+    backdrop-filter:blur(25px) saturate(160%);
+    -webkit-backdrop-filter:blur(25px) saturate(160%);
+    box-shadow:
+    0 12px 20px -5px rgba(0, 0, 0, 0.12),
+    0 6px 10px -4px rgba(0, 0, 0, 0.08);
+}
+#starts::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:url("noise.png");
+    background-repeat:repeat;
+    background-size:180px;
+    opacity:0.2;
+    z-index:1;
+    pointer-events:none;
+}
+#log,#start{
+    position:relative;
+    z-index:2;
+}
+
+#log{
+    /*border : 1px solid black;*/
+    font-weight: 600;
+    width : 33%;
+    text-align : center;
+    padding-top : 4.5%;
+    transition : transform 1s ease;
+}
+#start{
+    border-radius : 14px;
+    /*border : 1px solid black;*/
+    width : 60%;
+    background-color : #7764a0;
+    color : white;
+    text-align : center;
+    padding-top :2.5%;
+    height : 1.5vw;
+    margin-top : 1.5%;
+    transition : transform 1s ease;
+}
+#start:active{
+    transform : scale(0.92);
+}
+#start:hover{ 
+    background-color: var(--accent-dark); 
+}
+#log:active{
+    transform : scale(0.92);
+}
+#items{
+    position: relative;
+    overflow: hidden;
+    height: 70%;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 7px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #dfcffc 0%, #d7c1f9 45%, #b5a6cb 100%);
+    backdrop-filter: blur(25px) saturate(160%);
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    box-shadow:
+    0 12px 20px -5px rgba(0, 0, 0, 0.12),
+    0 6px 10px -4px rgba(0, 0, 0, 0.08) !important;
+
+    animation-range : exit 0% exit 1px;
+    animation : fadeout steps(1) both;
+    animation-timeline : view();
+    transition: opacity 0.1s ease-in-out;
+}
+#items:hover {
+  opacity: 1 !important;
+    box-shadow : none;
+}
+#items::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:50%;
+    background:linear-gradient(to bottom, rgba(255,255,255,.10), rgba(255,255,255,0));
+    border-radius:15px 15px 0 0;
+    pointer-events:none;
+}
+#items::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:url("noise.png");
+    background-repeat:repeat;
+    background-size:180px;
+    opacity:.4;
+    pointer-events:none;
+    z-index:1;
+}
+#items > *{
+    /*for all the childern of items*/
+    position: relative;
+    z-index: 2;
+}
+@keyframes fadeout {
+  to{
+    opacity: 0;
+  }
+}
+.decor{
+    text-transform : capitalize;
+    color : black;
+    font-size: 0.9vw;
+    cursor : pointer;
+    white-space: nowrap;
+    font-weight : 500;
+}
+/*#resources_box,#solutions_box*/
+#product_box{
+    display : flex;
+    flex-direction : row;
+    gap : 1.5px;
+    margin-top : 0.35vw;
+}
+#about,#faq,#price{
+    margin-top : 0.35vw;
+    margin-bottom : 1vw;
+}
+.arrow_up span{
+    display : inline-block;
+    transform : translateY(-1vw);
+    font-size : 1.5vw;
+    width : 1.25vw;
+    height : 100%;
+}
+.arrow_down span{
+    display : inline-block;
+    font-size : 1.5vw;
+    width : 1.25vw;
+    height : 100%;
+}
+.arrow{
+    background-color : transparent;
+    border : none;
+}
+.arrow_shadow{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+#hero_section{
+    margin-top : 3.5vw;
+    display : flex;
+    flex-direction : row;
+    justify-content : space-around;
+    height : 31vw;
+    overflow:visible;
+}
+#left_hero{
+    width : 40vw;
+    margin-left : 4vw;
+    margin-top : 3.5vw;
+}
+#right_hero{
+    /*border : 1px solid black;*/
+    height : 33vw;
+    width : 46vw;
+    overflow:visible;
+}
+#sub_head{
+    margin-left : 1.5vw;
+    display : flex;
+    flex-direction : column;
+    margin-top : 3vw;
+    justify-content : space-around;
+    height : 27vh
+}
+.sub_head_decor{
+    font-size : 3.85vw;
+    font-weight : 750;
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+}
+#box__3{
+    line-height: 1.08;
+    font-weight : 750;
+    letter-spacing: -0.01em;
+    font-style : italic;
+    background: linear-gradient(to right, #413bc6, #9f65f5, #b885ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+#sub_head_2{
+    margin-right : 5vw;
+    font-size : 1.3vw;
+    margin-top : 1.5vw;
+    line-height: 1.5;
+    max-width: 34ch;
+    color : #757575;
+}
+#btns{
+    margin-top : 1.75vw;
+    height : 3vw;
+    display : flex;
+    flex-direction : row;
+    justify-content : space-around;
+    margin-right : 8vw;
+    flex-wrap: wrap;
+}
+#book,#know{
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color : white;
+    border-radius : 7px;
+    font-size : 1.05vw;
+    font-weight: 600;
+}
+#book:active,#know:active{
+    transform : scale(0.95);
+}
+#book{
+    background-color : #7764a0;
+    color : white;
+    width : 40%;
+    border : none;
+    box-shadow: 0 10px 24px rgba(119, 100, 160, 0.28);
+}
+#know{
+    width : 35%;
+    color : #7764a0;
+    border : 1px solid #7764a0;
+    font-weight : 650;
+}
+#know:hover{ background: rgba(119, 100, 160, 0.06); }
+#book:hover{ background-color: var(--accent-dark); }
+
+#right_hero {
+    perspective: 3000px;
+    margin-right : 4vw;
+    display : flex;
+    flex-direction : row;
+    justify-content : space-between;
+}
+#dash_box {
+    width : 100%;
+    height : 65%;
+    margin-top : 2.5vw;
+    overflow : visible;
+    transform-style: preserve-3d;
+}
+#phone_box {
+    width : 20%;
+    height : 55%;
+    margin-top : 7vw;
+    overflow : visible;
+    transform-style: preserve-3d;
+    margin-left: -10vw; 
+}
+#wrapper{
+    position: relative;
+    width:fit-content;
+    height:fit-content;
+    transform-style:preserve-3d;
+    transform-origin:center center;
+    will-change: transform;
+    display:flex;
+    flex-direction : row;
+    justify-content : space-between;
+    transform: rotateY(-34deg) rotateZ(5.5deg) translateX(0px) translateY(0px);
+}
+#dash {
+    margin-left : 5vw;
+    width: 90%;
+    height: 100%;
+    border-radius : 15px;
+    background: #ffffff;
+    border: 1px solid rgba(220, 210, 255, 0.6);
+    box-shadow: -15px 25px 40px rgba(0, 0, 0, 0.05),-40px 60px 90px rgba(120, 90, 230, 0.22);}
+#phone {
+    width: 100%;
+    height: 100%;
+    border-radius : 20px;
+    transform: translateZ(80px) translateY(-25px) translateX(80px);
+    filter: drop-shadow(30px 40px 50px rgba(0, 0, 0, 0.3));
+}
+#wrapper,
+#dash,
+#phone{
+    backface-visibility:hidden;
+}
+#transition_space{
+    height : 15vw;
+    width : 100%;
+}
+#logo_3d_box{
+    cursor : pointer;
+    z-index : 1000;
+    position: absolute;
+    /*border : 1px solid black*/;
+    height : 23vw;
+    width : 23vw;
+    transform : translateX(42vw) translateY(-18vw);
+    overflow: hidden;
+}
+#canvas-container{
+    width:100%;
+    height:100%;
+}
+#service{
+    height : 30vw;
+    width : 100%;
+    display : flex;
+    flex-direction : row;
+    justify-content : space-between;
+}
+/* Mobile-only services grid — hidden on desktop, shown only inside the
+   <=1024px media query below. Desktop keeps using #service exactly as before. */
+#service_mobile{
+    display : none;
+}
+#left_serv{
+    display : flex;
+    flex-direction : column;
+    justify-content : space-between;
+    height : 100%;
+    width : 15%;
+}
+#right_serv{
+    display : flex;
+    flex-direction : column;
+    justify-content : space-between;
+    height : 100%;
+    width : 15%;
+}
+#mid_serv{
+    display : flex;
+    flex-direction : column;
+    justify-content : space-between;
+    align-items : center;
+    height : 100%;
+    width : 30%;
+}
+#serv_box1{
+    height : 35%;
+}
+#serv_box2{
+    height : 35%;
+}
+#serv_head{
+    width : 100%;
+    font-size : 3vw;
+    font-weight : 750;
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    text-align : center;
+    text-transform : capitalize;
+    margin-top : 7.5vw;
+    margin-left : 0;
+}
+#serv_box3{
+    height : 35%;
+    width : 52%;
+    margin-left : auto;
+    margin-right : auto;
+}
+#serv_box4{
+    height : 35%;
+}
+#serv_box5{
+    height : 35%;
+}
+#eg{
+    background-color : blue;
+    width : 100%;
+    height : 20vw;
+    margin-top : 2vw;
+}
+.serv_box{
+    border : 1px solid #d2d2d2;
+    width : 100%;
+    height : 100%;
+    z-index : -1;
+    border-radius : 15px;
+    box-shadow:
+    0 12px 20px -5px rgba(0, 0, 0, 0.12),
+    0 6px 10px -4px rgba(0, 0, 0, 0.08) !important;
+    
+}
+.serv:hover .serv_box{
+    visibility : hidden;
+}
+.serv_box_hov{
+    border-radius : 15px;
+    width : 100%;
+    height : 108%;
+    color : white;
+    z-index : 1;
+    margin-top : -74%;
+    //background: linear-gradient(135deg, #dfcffc 0%, #d7c1f9 45%, #b5a6cb 100%);
+    background: radial-gradient(circle at 100% 50%, #d800ff 0%, #610094 30%, #150024 70%, #05000a 100%);
+
+    backdrop-filter: blur(25px) saturate(160%);
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    box-shadow:
+    0 12px 20px -5px rgba(0, 0, 0, 0.12),
+    0 6px 10px -4px rgba(0, 0, 0, 0.08) !important;
+    visibility : hidden;
+    color : white;
+    font-size : 2vw;
+    font-weight : 750;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.serv:hover .serv_box_hov{
+    visibility: visible;
+}
+/* touch equivalent of :hover, so mobile/tablet reveal the purple panel on tap instead of always showing it */
+.serv:active .serv_box{
+    visibility: hidden;
+}
+.serv:active .serv_box_hov{
+    visibility: visible;
+}
+
+.serv_box_hov::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:url("noise.png");
+    background-repeat:repeat;
+    background-size:100%;
+    opacity:.7;
+    pointer-events:none;
+    z-index:1;
+}
+.serv_img{
+    background-size : cover;
+    width : 100%;
+    height : 100%;
+    border-radius : 15px;
+}
+#icons{
+    margin-top : 1.5vw;
+    width : 98%;
+    height : 45vw;
+    margin-left : auto;
+    margin-right : auto;
+    display : flex;
+    flex-direction : column;
+}
+#icon_heads{
+    position : relative;
+    display : flex;
+    flex-direction : column;
+    gap : 1vw;
+    z-index : -100;
+    width : 55vw;
+    height :25vw;
+    margin-top : 10vw;
+    margin-left : auto;
+    margin-right : auto;
+    gap:2vw;
+}
+.icon_heads{
+    overflow: hidden;
+    position: relative;
+    background-color : transparent;
+    height : 15%;
+    text-align : center;
+}
+.icon_heads > *{
+    position: relative;
+}
+#icons_box{
+    position : relative;
+    display: grid;
+    grid-template-areas: "layer";
+    place-items: center;
+    z-index : 1;
+    margin-top : -22.5vw;
+    height : 20vw;
+    width : 20vw;
+    margin-left : auto;
+    margin-right : auto;
+}
+#icons_box>*{
+    overflow: hidden;
+    position: relative;
+    width : 15vw;
+    height : 15vw;
+    grid-area: layer;
+}
+.icon__{
+    margin-left : auto;
+    margin-right : auto;
+    margin-top : 5vw;
+    height : 5vw;
+    width : 5vw;
+    color : white;
+}
+#icon1{
+    background-color : #ffadad;
+}
+.icons__{
+    margin-left : auto;
+    margin-right : auto;
+    height : 90%;
+    width : 90%;
+}
+.white-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  width : 100%;
+  height : 100%;
+  display : block;
+  object-fit : contain;
+}
+#icon2{
+    background-color : #ffd6a5;
+}
+#icon3{
+    background-color : #fdffb6;
+}
+#icon4{
+    background-color : #caffbf;
+}
+#icon5{
+    background-color : #9bf6ff;
+}
+#icon6{
+    background-color : #bdb2ff;
+}
+#icon7{
+    background-color : #3d5a6b;
+}
+.footer-perspective-wrapper {
+    position: relative;
+    width: 100%;
+}
+#footer{
+    max-height : 47vw;
+    overflow: hidden;
+    position : sticky;
+    z-index : 1;
+    top: calc(100vh - 47vw);
+    //bottom : 0px;
+}
+#footer_scroll{
+    height : 45vw;
+    width : 100%;
+    border : 1px solid black;
+    z-index : 2;
+    position: relative;
+    background: rgba(15, 15, 20, 0.15); 
+    backdrop-filter: blur(12px) saturate(180%);     
+    -webkit-backdrop-filter: blur(12px) saturate(180%); 
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top : 0;
+}
+
+/* =====================================================
+   RESPONSIVE / MOBILE
+   Single breakpoint (<=1024px) so tablets get the exact
+   same layout as phones — nothing above 1024px is touched,
+   so desktop stays exactly as it was.
+   ===================================================== */
+
+@media screen and (max-width: 1024px){
+
+    /* ---------- Navbar: normal inline nav row, no hamburger ---------- */
+    #navbar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        padding: 3.5vw 5vw;
+        box-sizing: border-box; /* padding was pushing this 10vw wider than the viewport, shoving everything left */
+        flex-direction: row;
+        align-items: center;
+        justify-content: center !important; /* the desktop rule uses !important, so this needs it too or it loses */
+        gap: 0;
+        background: none; /* no translucent strip behind the navbar on mobile — texture lives on #items below, like desktop */
+        z-index: 1100;
+    }
+    /* logo box removed on mobile/tablet */
+    #logo{ display: none; }
+
+    /* no hamburger anymore — nav links are shown directly */
+    #menu_toggle{ display: none; }
+
+    /* log in / start-for-free dropped on mobile to save space */
+    #starts{ display: none; }
+
+    #items{
+        display: flex;
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        max-width: none;
+        height: auto;
+        gap: 4.5vw;
+        padding: 3.2vw 5vw;
+        border-radius: 15px;
+        /* same glass-pill look as desktop's #items: gradient + blur + noise (::before/::after, box-shadow
+           are inherited from the desktop rule since they're not overridden here) */
+        background: linear-gradient(135deg, #dfcffc 0%, #d7c1f9 45%, #b5a6cb 100%);
+        backdrop-filter: blur(25px) saturate(160%);
+        -webkit-backdrop-filter: blur(25px) saturate(160%);
+        animation: none;
+        opacity: 1 !important;
+    }
+    .decor{ font-size: 3.2vw; margin: 0; }
+    #product_box{ margin-top: 0; gap: 2px; }
+    /* the product dropdown arrow has no menu behind it — hide it on mobile
+       so "product" reads as a plain nav link like the others */
+    #product_up,#product_down{ display: none; }
+    #about,#faq,#price{ margin: 0; }
+
+    /* ---------- Hero (first viewport) ---------- */
+    #hero_section{
+        /* top-aligned with just enough clearance for the fixed navbar, so
+           the leftover space reads as normal bottom breathing room instead
+           of an oversized, lopsided gap above the heading */
+        padding-top: 20vw;
+        margin-top: 0;
+        /* min-height (not height) so the hero always fills at least one
+           full screen — this is what actually pushes "our services" down
+           to the second viewport, regardless of device height. Falls back
+           to 100vh on browsers without svh support. */
+        height: auto;
+        min-height: 100vh;
+        min-height: 100svh;
+        box-sizing: border-box;
+        gap: 8vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    #left_hero{
+        width: 88%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    #sub_head{
+        margin-left: 0;
+        height: auto;
+        align-items: center;
+        gap: 0.9rem;
+    }
+    .sub_head1_decor{
+        font-size: clamp(2rem, 10vw, 2.75rem) !important;
+    }
+    #sub_head_2{
+        margin: 7vw auto 0;
+        font-size: clamp(0.95rem, 4vw, 1.1rem);
+        max-width: 32ch;
+        text-align: center;
+    }
+    #btns{
+        margin: 10vw auto 0;
+        height: auto;
+        justify-content: center;
+        gap: 4vw;
+    }
+    #book,#know{
+        width: 80%;
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+    /* dashboard + phone mockup removed on mobile/tablet — keep the hero minimal */
+    #right_hero{ display: none; }
+    #transition_space{ height: 4vw; }
+
+    /* ---------- Service (second viewport) ----------
+       Desktop's image/hover-panel version of #service is replaced on mobile
+       by #service_mobile — a 6-card glass grid — so it's hidden here entirely
+       rather than reflowed. */
+    #service{
+        display: none !important;
+    }
+
+    #service_mobile{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 6vw;
+        margin-top: 12vw;
+    }
+    #service_mobile_head{
+        width: 100%;
+        font-size: 8vw;
+        font-weight: 750;
+        font-family: var(--font-display);
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+        text-align: center;
+        text-transform: capitalize;
+        margin: 0 0 6vw;
+    }
+    #service_mobile_grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4vw;
+    }
+    @media screen and (min-width: 600px) {
+        #service_mobile_grid {
+            grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+        }
+    }
+    .msrv_card{
+        position: relative;
+        box-sizing: border-box;
+        border-radius: 16px;
+        padding: 5.5vw 3.8vw;
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(16px) saturate(160%);
+        -webkit-backdrop-filter: blur(16px) saturate(160%);
+        box-shadow:
+        0 10px 20px -8px rgba(0, 0, 0, 0.10),
+        0 4px 8px -4px rgba(0, 0, 0, 0.06);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .msrv_card_border{
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: visible;
+    }
+    .msrv_card_border rect{
+        fill: none;
+        stroke: #7764a0;
+        stroke-width: 2;
+        stroke-dasharray: 7 6;
+    }
+    .msrv_card.dash-active .msrv_card_border rect {
+        animation: msrvDashMove 5s linear infinite;
+        filter: drop-shadow(0 0 5px rgba(119, 100, 160, 0.6));
+        stroke: #9b8ac4;
+    }
+    @keyframes msrvDashMove{
+        to{ stroke-dashoffset: -130; }
+    }
+    .msrv_icon{
+        position: relative;
+        width: 11vw;
+        height: 11vw;
+        max-width: 46px;
+        max-height: 46px;
+        min-width: 34px;
+        min-height: 34px;
+        border-radius: 10px;
+        background: rgba(119, 100, 160, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4vw;
+    }
+    .msrv_icon .material-icons-outlined{
+        font-size: 5vw;
+        color: #5f4f88;
+    }
+    .msrv_title{
+        position: relative;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 4vw;
+        line-height: 1.25;
+        color: #1c1c1c;
+        margin-bottom: 2vw;
+    }
+    .msrv_desc{
+        position: relative;
+        font-size: 3vw;
+        line-height: 1.45;
+        color: #5c5c5c;
+    }
+
+    /* ---------- Icons (third viewport) ----------
+       Icons float around the corners as a backdrop, the headings sit
+       centered on top and reveal one by one as the section scrolls in. */
+    #icons{
+        position: relative;
+        height: auto;
+        min-height: 92vh;
+        margin-top: 14vw;
+        overflow: hidden;
+    }
+    #icon_heads{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        width: 82%;
+        height: auto;
+        margin: 0;
+        gap: 7vw;
+    }
+    .icon_heads{
+        height: auto;
+        font-size: 6.4vw !important;
+    }
+    #icons_box{
+        position: absolute;
+        inset: 0;
+        display: block;
+        z-index: 1;
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    #icons_box > *{
+        position: absolute;
+        width: 15vw;
+        height: 15vw;
+        max-width: 62px;
+        max-height: 62px;
+    }
+    /* four corners + two mid-edges + bottom-center, "surrounding" the text */
+    #icon1_box{ top: 5%;    left: 6%; }
+    #icon2_box{ top: 5%;    right: 6%; }
+    #icon3_box{ top: 36%;   left: -3%; }
+    #icon4_box{ top: 36%;   right: -3%; }
+    #icon5_box{ bottom: 16%; left: 6%; }
+    #icon6_box{ bottom: 16%; right: 6%; }
+    #icon7_box{ bottom: 3%;  left: 50%; transform: translateX(-50%); }
+
+    .icon__{
+        margin-top: 22%;
+        width: 45%;
+        height: 45%;
+    }
+
+    /* ---------- Footer / Founders (fourth viewport) ----------
+       #footer is completely untouched normal flow — no sticky, no pin, no
+       internal scroll — so the founders section scrolls exactly like any
+       other part of the page and every word of both bios stays reachable.
+       The slide-over is handled by footer_anim.js as a scrubbed transform
+       (no pin — pinning tall content here previously broke the layout, and
+       a plain CSS margin has no scroll-linked motion, so neither worked). */
+    #footer{
+        max-height: none;
+        position: static;
+        top: auto;
+        overflow: visible;
+    }
+    #Heading{
+        font-size: 220%;
+        padding-top: 4%;
+    }
+    #footer_scroll{
+        height: auto;
+        min-height: 100svh;
+        min-height: 100vh; /* fallback for browsers without svh support */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 2vw;
+        box-sizing: border-box;
+    }
+    .icon-container {
+        display: flex; /* Flex hi rakho */
+        flex-wrap: wrap; /* Takki neeche aa sake */
+        justify-content: center; /* Icons ko center lane ke liye */
+        align-items: center;
+        gap: 4vw;
+        padding: 0 10vw; /* Sides se thodi jagah chhod do */
+        margin: 0 auto; /* Container ko center align karne ke liye */
+    }
+
+    /* Icons ka size thoda fix karo taaki gap consistent rahe */
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 8vw; 
+    }
+}
+
+/* ---------- Small phones (<=480px) — size-only fine-tuning, same layout ---------- */
+@media screen and (max-width: 480px){
+    #hero_section{ margin-top: 20vw; }
+    .sub_head1_decor{ font-size: 2.1rem !important; }
+    #book,#know{ width: 100%; }
+    #serv_head{ font-size: 9vw; }
+    #Heading{ font-size: 160%; }
+    #service_mobile_head{ font-size: 9vw; }
+    #service_mobile_grid{ gap: 3.5vw; }
+    .msrv_title{ font-size: 4.6vw; }
+    .msrv_desc{ font-size: 3.4vw; }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce){
+    *{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

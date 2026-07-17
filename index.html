@@ -1,37 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founders section</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="section4-background">
-        <div id="Heading">Founders</div>
-        <div id="flex-wrapper">
-            <div class="panel" id="panel-left">
-                <div class="portrait-div">
-                    <img class="portrait" src="Gurnoor.png">
+    <head>
+        <title>neveron</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style_faq.css">
+        <link rel="stylesheet" href="style2.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+        <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="navbar">
+            <div id="logo"></div>
+            <button id="menu_toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <div id="items">
+                <div id="product_box">
+                    <div id="product" class="decor">product</div>
+                    <button class="decor arrow arrow_up" id="product_up" onclick="myopen(this)">
+                        <span>&#8964</span>
+                    </button>
+                    <button class="decor arrow arrow_down" style="display:none;" id="product_down" onclick="myclose(this)">
+                        <span>&#8963;</span>
+                    </button>
                 </div>
-                <div class="info">
-                    <span class="role">Co-Founder</span>
-                    <h2 class="name">Gurnoor</h2>
-                    <p class="bio">Gurnoor drives the larger vision behind NEVERON, operating with a clear focus on building scalable systems and long-term value. He works at the intersection of strategy and execution, ensuring that ideas are not just ambitious but also structurally sound. His approach is deliberate, grounded, and oriented toward sustained impact across initiatives.</p>
-                </div>
+                <div id="price" class="decor">price</div>
+                <div id="about" class="decor">about us</div>
+                <div id="faq" class="decor">FAQs</div>
             </div>
-            <div class="panel" id="panel-right">
-                <div class="portrait-div">
-                    <img class="portrait" src="Prakul.png">
-                </div>
-                <div class="info">
-                    <span class="role">Co-Founder</span>
-                    <h2 class="name">Prakul</h2>
-                    <p class="bio">Prakul anchors the operational and strategic backbone of NEVERON, bringing discipline to growth and expansion. He focuses on structuring decisions, optimizing resources, and maintaining clarity as the organization scales. His work reflects a balance of pragmatism and foresight, ensuring that execution remains controlled while ambition continues to expand.</p>
-                </div>
+            <div id="starts">
+                <div id="log" class="decor">log in</div>
+                <div id="start" class="decor">start for free</div>
             </div>
         </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+        <section id="hero_section">
+            <section id="left_hero">
+                <div id="sub_head">
+                    <div id="box__1" class="sub_head1_decor">Ship</div>
+                    <div id="box__2" class="sub_head1_decor">Products</div>
+                    <div id="box__3" class="sub_head1_decor">faster</div>
+                </div>
+                <div id="sub_head_2">The all-in-one platform to bring your ideas to life. No code. No limits.</div>
+                <div id="btns">
+                    <button id="book">Book a demo</button>
+                    <button id="know">Know about us</button>
+                </div>
+            </section>
+            <section id="right_hero">
+                <div id="wrapper">
+                    <div id="dash_box">
+                        <img src="dash.jpeg" alt="dashboard image" id="dash">
+                    </div>
+                    <div id="phone_box">
+                        <img src="phone.jpeg" alt="phone image" id="phone">
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!--
+        <div id="logo_3d_box">
+            <div id="canvas-container"></div>
+        </div>
+        -->
+        <section id="transition_space"></section>
+        <section id="service">
+            <div id="left_serv">
+                <div id="serv_box1" class="serv">
+                    <div id="box11" class="serv_box">
+                        <img src="aitool.jpeg" alt="Custom AI Tools" class="serv_img">
+                    </div>
+                    <div id="box12" class="serv_box_hov">Custom AI Tools</div>
+                </div>
+                <div id="serv_box2" class="serv">
+                    <div id="box21" class="serv_box">
+                        <img src="soft.jpeg" alt="Custom Software" class="serv_img">
+                    </div>
+                    <div id="box22" class="serv_box_hov">Custom Software</div>
+                </div>
+            </div>
+            <div id="mid_serv">
+                <div id="serv_head">our services</div>
+                <div id="serv_box3" class="serv">
+                    <div id="box31" class="serv_box">
+                        <img src="custtool.jpeg" alt="Custom Tools" class="serv_img">
+                    </div>
+                    <div id="box32" class="serv_box_hov">Custom Tools</div>
+                </div>
+            </div>
+            <div id="right_serv">
+                <div id="serv_box4" class="serv">
+                    <div id="box41" class="serv_box">
+                        <img src="digital.jpeg" alt="Digital Marketing Solutions" class="serv_img">
+                    </div>
+                    <div id="box42" class="serv_box_hov">Digital Marketing Solutions</div>
+                </div>
+                <div id="serv_box5" class="serv">
+                    <div id="box51" class="serv_box">
+                        <img src="seogeo.jpeg" alt="SEO+GEO" class="serv_img">
+                    </div>
+                    <div id="box52" class="serv_box_hov">SEO+GEO</div>
+                </div>
+            </div>
+        </section>
+        <section id="service_mobile">
+            <div id="service_mobile_head">our services</div>
+            <div id="service_mobile_grid">
+                <div class="msrv_card">
+                    <svg class="msrv_card_border"><rect x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect></svg>
+                    <div class="msrv_icon"><span class="material-icons-outlined">language</span></div>
+                    <div class="msrv_title">Website Development</div>
+                    <div class="msrv_desc">Modern, responsive websites built with the latest tech for speed, performance, and a seamless user experience.</div>
+                </div>
+                <div class="msrv_card">
+                    <svg class="msrv_card_border"><rect x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect></svg>
+                    <div class="msrv_icon"><span class="material-icons-outlined">lightbulb</span></div>
+                    <div class="msrv_title">Custom AI Tools</div>
+                    <div class="msrv_desc">Intelligent automation and AI-powered solutions that streamline operations and support smarter decisions.</div>
+                </div>
+                <div class="msrv_card">
+                    <svg class="msrv_card_border"><rect x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect></svg>
+                    <div class="msrv_icon"><span class="material-icons-outlined">code</span></div>
+                    <div class="msrv_title">Custom Software</div>
+                    <div class="msrv_desc">Tailored software built around your exact requirements, designed to scale as your business grows.</div>
+                </div>
+                <div class="msrv_card">
+                    <svg class="msrv_card_border"><rect x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect></svg>
+                    <div class="msrv_icon"><span class="material-icons-outlined">tune</span></div>
+                    <div class="msrv_title">Custom Tools</div>
+                    <div class="msrv_desc">Specialized utilities crafted to boost productivity and solve unique technical challenges.</div>
+                </div>
+                <div class="msrv_card">
+                    <svg class="msrv_card_border"><rect x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect></svg>
+                    <div class="msrv_icon"><span class="material-icons-outlined">pie_chart</span></div>
+                    <div class="msrv_title">Digital Marketing Solutions</div>
+                    <div class="msrv_desc">Strategic campaigns that drive engagement, increase conversions, and grow your digital presence.</div>
+                </div>
+                <div class="msrv_card">
+                    <svg class="msrv_card_border"><rect x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect></svg>
+                    <div class="msrv_icon"><span class="material-icons-outlined">search</span></div>
+                    <div class="msrv_title">SEO + GEO</div>
+                    <div class="msrv_desc">Comprehensive search and generative engine optimization to maximize visibility everywhere.</div>
+                </div>
+            </div>
+        </section>
+        <section id="icons">
+            <div id="icon_heads">
+                <div id="icon_head1" class="icon_heads">Building Custom Software</div>
+                <div id="icon_head2" class="icon_heads">Integrating AI Solutions</div>
+                <div id="icon_head3" class="icon_heads">Driving Digital Growth</div>
+            </div>
+            <div id="icons_box">
+                <div id="icon1_box">
+                    <div id="icon1" class="icon__">
+                        <div  class="icons__">
+                            <img src="icon1.svg" class="white-icon" alt="My Icon">
+                        </div>
+                    </div>
+                </div>
+                <div id="icon2_box">
+                    <div id="icon2" class="icon__">
+                        <div class="icons__">
+                            <img src="icon2.svg" class="white-icon" alt="My Icon">
+                        </div>
+                    </div>
+                </div>
+                <div id="icon3_box">
+                    <div id="icon3" class="icon__">
+                        <div class="icons__">
+                            <img src="icon3.svg" class="white-icon" alt="My Icon">
+                        </div>
+                    </div>
+                </div>
+                <div id="icon4_box">
+                    <div id="icon4" class="icon__">
+                        <div class="icons__">
+                            <img src="icon4.svg" class="white-icon" alt="My Icon">
+                        </div>
+                    </div>
+                </div>
+                <div id="icon5_box">
+                    <div id="icon5" class="icon__">
+                        <div class="icons__">
+                            <img src="icon5.svg" class="white-icon" alt="My Icon">
+                        </div>
+                    </div>
+                </div>
+                <div id="icon6_box">
+                    <div id="icon6" class="icon__">
+                        <div class="icons__">
+                            <img src="icon6.svg" class="white-icon" alt="My Icon">
+                        </div>
+                    </div>
+                </div>
+                <div id="icon7_box">
+                    <div id="icon7" class="icon__">
+                        <div class="icons__">
+                            <img src="icon7.svg" class="white-icon" alt="My Icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="faq">
+            <div id="heading">Frequently asked questions</div>
+            <div class="faq-container">
+            <details class="faq-item">
+                <summary>Who is neveron for?<span class="icon_">+</span></summary>
+                <p>If you're looking to save time through automation, improve your online visibility, generate more leads, or build custom software that solves real business challenges, Neveron is for you. We partner with businesses across industries to create AI-powered tools, websites, marketing strategies, and digital solutions designed for long-term growth.</p>
+            </details>
+            
+            <details class="faq-item">
+                <summary>Can neveron work with our existing tech stack?<span class="icon_">+</span></summary>
+                <p>Yes. Neveron is designed to work with your existing tech stack whenever possible. Whether you use CRM platforms, CMS solutions, APIs, cloud services, or other business tools, we integrate seamlessly to minimize disruption and maximize efficiency.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>How long does a project usually take?<span class="icon_">+</span></summary>
+                <p>Project timelines vary depending on complexity. After understanding your requirements, we'll provide a detailed timeline and keep you updated throughout development.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>How much does a project cost?<span class="icon_">+</span></summary>
+                <p>Pricing depends on the project's scope, features, and requirements. Contact us for a customized quote based on your needs.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Do you offer maintenance after launch?<span class="icon_">+</span></summary>
+                <p>Yes. We provide ongoing maintenance, updates, security monitoring, and technical support to keep your solution running smoothly.</p>
+            </details>
+            </div>
+        </section>
+        <div class="footer-perspective-wrapper">
+            <section id="footer">
+                <div id="section4-background">
+                    <div id="Heading">Founders</div>
+                    <div id="flex-wrapper">
+                        <div class="panel in-view" id="panel-left">
+                            <div class="portrait-div">
+                                <img class="portrait" src="Gurnoor.png">
+                            </div>
+                            <div class="info">
+                                <span class="role">Co-Founder</span>
+                                <h2 class="name">Gurnoor</h2>
+                                <p class="bio">Gurnoor drives the larger vision behind NEVERON, operating with a clear focus on building scalable systems and long-term value. He works at the intersection of strategy and execution, ensuring that ideas are not just ambitious but also structurally sound. His approach is deliberate, grounded, and oriented toward sustained impact across initiatives.</p>
+                            </div>
+                        </div>
+                        <div class="panel in-view" id="panel-right">
+                            <div class="portrait-div">
+                                <img class="portrait" src="Prakul.png">
+                            </div>
+                            <div class="info">
+                                <span class="role">Co-Founder</span>
+                                <h2 class="name">Prakul</h2>
+                                <p class="bio">Prakul anchors the operational and strategic backbone of NEVERON, bringing discipline to growth and expansion. He focuses on structuring decisions, optimizing resources, and maintaining clarity as the organization scales. His work reflects a balance of pragmatism and foresight, ensuring that execution remains controlled while ambition continues to expand.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="footer_scroll">
+                <div class="svg-wrapper">
+                    <svg width="100%" height="150" overflow="visible">
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="text-svg">NEVERON</text>
+                    </svg>
+                </div>
+
+                <div class="icon-container">
+                    <a href="https://www.instagram.com/nexacon_ai_official?igsh=MTBkcnM5ZWtmbHZ1cQ%3D%3D" target="_blank" style="color:#e86f97; text-decoration:none;"><span class="material-icons-outlined icon">camera_alt</span></a>
+                    <a href="https://www.linkedin.com/company/neveron/" target="_blank" style="color:#5cb7e9; text-decoration:none;"><span class="material-icons-outlined icon">business</span></a>
+                    <span class="material-icons-outlined icon" style="color:#e8776d" onclick="openPopup('mail')">email</span>
+                    <span class="material-icons-outlined icon" style="color:#73dc8f" onclick="openPopup('phone')">phone</span>
+                    <span class="material-icons-outlined icon" style="color:#f1d582" onclick="openPopup('loc')">location_on</span>
+                </div>
+
+                <div id="mail" class="popup"><span class="popup-close" onclick="closePopups()">&times;</span><h3>Email</h3><p>nexaconofficial@gmail.com</p></div>
+                <div id="phone" class="popup"><span class="popup-close" onclick="closePopups()">&times;</span><h3>Phone</h3><p>7838656053<br>9560768910</p></div>
+                <div id="loc" class="popup"><span class="popup-close" onclick="closePopups()">&times;</span><h3>Address</h3><p>202/A-19, 2nd Floor, Gali No. 3<br>Gurunanakpura, Laxmi Nagar<br>Delhi-110092</p></div>
+
+                <div class="copyright_">&copy; 2025 Neveron. All rights reserved.</div>
+            </section>
+        </div>
+        <script src="script2.js"></script>
+        <script src="script_faq.js"></script>
+        <script src="script.js"></script>
+        <script src="main.js"></script>
+        <script type="module" src="model.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+        <script src="animation.js"></script>
+        <script src="serv_anim.js"></script>
+        <script src="head_anim.js"></script>
+        <script src="icon_anim.js"></script>
+        <script src="footer_anim.js"></script>
+    </body>
 </html>

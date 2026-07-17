@@ -3,28 +3,21 @@
     src: url(Ethnocentric-Regular.otf) format("opentype");
 }
 
-body {
-    background-color: black;
-    color: white;
-    font-family: sans-serif;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
 .svg-wrapper {
-    width: 90%; 
-    max-width: 800px;
+    margin-top : 12vw;
+    object-fit :content;
+    height : 25vh;
+    width: 88%;
     display: flex;
     justify-content: center;
+    margin-left : auto;
+    margin-right : auto;
 }
 
 .text-svg {
+    margin-left : 30vw;
     font-family: 'Heading';
-    font-size: 200px;
+    font-size: 13vw;
     fill: none;
     stroke: white;
     stroke-width: 2;
@@ -38,28 +31,54 @@ body {
 }
 
 .icon-container {
+    width : 30%;
     display: flex;
-    gap: 40px;
-    margin-top: 30px;
+    flex-direction : row;
+    gap : 2.5vw;
+    margin-left : auto;
+    margin-right : auto;
+    height : 10vh;
 }
 
 .icon {
-    font-size: 40px;
+    margin-top : 3vw;
+    margin-left : 1.7vw;
+    transform : scale(1.6);
     cursor: pointer;
     transition: transform 0.3s;
 }
 
 .icon:hover { transform: scale(1.2); }
 
-@media (max-width: 700px) {
-    .text-svg { font-size: 50px; }
-    .icon-container { gap: 20px; }
-    .icon { font-size: 30px; }
+.copyright_{
+    margin-left : auto;
+    margin-right : auto;
+    color : grey;
+    width : 18.5%;
+    margin-top : 14vw;
 }
-@media (min-width: 700px) and (max-width: 1300px) {
-    .text-svg { font-size: 100px; }
-    .icon-container { gap: 20px; }
+
+@media (max-width: 1024px) {
+    .svg-wrapper {
+        margin-top: 5vw;
+        height: auto;
+    }
+    .text-svg { font-size: 70px; }
+    .icon-container {
+        gap: 20px;
+        height: auto;
+        margin-top: 2vh;
+    }
     .icon { font-size: 30px; }
+    .copyright_ {
+        margin-top: 5vw;
+        width: auto;
+        text-align: center;
+        padding: 0 6vw;
+    }
+}
+@media (max-width: 700px) {
+    .text-svg { font-size: 42px; }
 }
 
 .popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 20px; text-align: center; width: 80%; max-width: 350px; }
